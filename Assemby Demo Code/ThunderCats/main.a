@@ -1,0 +1,306 @@
+; ThunderCats Music rip
+; SYS2304 ($0900) to start
+
+		*=$0900
+		SEI
+		JSR $E544
+		JSR $092F
+		JSR $094C
+		JMP $090A
+		LDX #$00
+		LDA $0AF2,X
+		STA SCREEN,X	;$0400,X
+		LDA #$01
+		STA $D800,X
+		LDA #$00
+		STA $D900,X
+		INX
+		BNE $090F
+		LDX #$00
+		LDA #$9F
+		STA $0590,X
+		INX
+		CPX #$28
+		BNE $0924
+		RTS
+		SEI
+		LDA #$1e
+		STA $D018 ;Memory setup register relative to VIC bank ($3800)
+		NOP
+		NOP
+		LDA #$7F
+		AND $D011 ;Screen control register
+		STA $D011 ;Screen control register
+		LDA #$00
+		STA $D020 ;Border colour
+		STA $D021 ;Background colour
+		JSR $090D
+		CLI
+		RTS
+		SEI
+		LDA $DC0D ;Interrupt control and status register
+		LDA #$7F
+		STA $DC0D ;Interrupt control and status register
+		LDA #$01
+		STA $D019 ;Interrupt status register
+		STA $D01A ;Interrupt control register
+		LDX #$9F
+		LDY #$09
+		STX $FFFE
+		STY $FFFF
+		LDX #$9E
+		LDY #$09
+		STX $FFFA
+		STY $FFFB
+		CLI
+		LDA #$35
+		STA $01
+		JSR $FB1D
+		NOP
+		NOP
+		LDA #$00
+		TAX
+		TAY
+		RTS
+		STA $0AD5
+		STY $0AD6
+		STX $0AD7
+		CLC
+		LDA $D019 ;Interrupt status register
+		AND #$01
+		BEQ $098A
+		STA $D019 ;Interrupt status register
+		RTS
+		LDA $0AD5
+		LDY $0AD6
+		LDX $0AD7
+		RTI
+		JSR $0980
+		LDA #$08
+		ORA #$C0
+		STA $D016 ;Horizontal scroll
+		LDA $0AD8
+		STA $D020 ;Border colour
+		STA $D021 ;Background colour
+		NOP
+		NOP
+		NOP
+		NOP
+		NOP
+		NOP
+		NOP
+		NOP
+		NOP
+		NOP
+		LDA #$00
+		STA $D020 ;Border colour
+		STA $D021 ;Background colour
+		LDA #$30
+		STA $D012 ;Current raster line
+		LDX #$DA
+		LDY #$09
+		STX $FFFE
+		STY $FFFF
+		CLI
+		JSR $0A97
+		JMP $0995
+		JSR $0980
+		LDA #$08
+		ORA #$C0
+		STA $D016
+		LDA #$00
+		STA $D020 ;Border colour
+		STA $D021 ;Background colour
+		LDA #$80
+		STA $D012 ;Current raster line
+		LDX #$02
+		LDY #$0A
+		STX $FFFE
+		STY $FFFF
+		CLI
+		JSR $ED12
+		JMP $0995
+		JSR $0980
+		LDA $0AD4
+		ORA #$C0
+		STA $D016 ;Horizontal scroll
+		LDA $0AD8
+		STA $D020 ;Border colour
+		STA $D021 ;Background colour
+		NOP
+		NOP
+		NOP
+		NOP
+		NOP
+		NOP
+		NOP
+		NOP
+		NOP
+		NOP
+		NOP
+		NOP
+		NOP
+		NOP
+		NOP
+		NOP
+		NOP
+		NOP
+		NOP
+		NOP
+		NOP
+		NOP
+		NOP
+		NOP
+		NOP
+		LDA #$00
+		STA $D020 ;Border colour
+		STA $D021 ;Background colour
+		LDA #$8A
+		STA $D012 ;Current raster line
+		LDX #$9F
+		LDY #$09
+		STX $FFFE
+		STY $FFFF
+		CLI
+		JSR $0A81
+		JSR $0A50
+		JMP $0995
+		LDA $0AD4
+		SEC
+		SBC #$02
+		STA $0AD4
+		BPL $0A63
+		AND #$07
+		STA $0AD4
+		JSR $0A64
+		RTS
+		LDX #$00
+		LDA $0591,X
+		STA $0590,X
+		INX
+		CPX #$27
+		BNE $0A66
+		LDY $0AD3
+		LDA $0BFD,Y ;Scroll Text
+		CLC
+		ADC #$7F
+		STA $05B7
+		INC $0AD3
+		RTS
+		LDX #$00
+		LDA $D012 ;Current raster line
+		CMP $D012 ;Current raster line
+		BEQ $0A86
+		LDA $0AE1,X
+		STA $D021 ;Background colour
+		INX
+		CPX #$06
+		BNE $0A83
+		RTS
+		INC $0AD1
+		LDX $0AD1
+		CPX #$03
+		BNE $0AD0
+		LDA #$00
+		STA $0AD1
+		LDA $0AE1
+		PHA
+		LDX #$00
+		LDA $0AE2,X
+		STA $0AE1,X
+		INX
+		CPX #$07
+		BNE $0AAC
+		PLA
+		STA $0AE8
+		LDY $0AD2
+		CPY #$08
+		BNE $0AC7
+		LDY #$00
+		STY $0AD2
+		LDA $0AEA,Y
+		STA $0AD8
+		INC $0AD2
+		RTS
+
+		SCREEN=$0400
+		
+		*=$0AD1
+		!byte $00,$01,$9E,$04,$93,$09,$00,$00
+		!byte $00,$00,$00,$00,$00,$00,$00,$00
+		!byte $0C,$0F,$01,$0F,$0C,$0B,$00,$0B
+		!byte $00,$00,$06,$0E,$03,$01,$03,$0E
+		!byte $06,$2D,$20,$14,$08,$05,$20,$17
+		!byte $09,$0C,$04,$20,$13,$14,$19,$0C
+		!byte $05,$13,$20,$10,$12,$05,$13,$05
+		!byte $0E,$14,$20,$01,$20,$11,$15,$09
+		!byte $03,$0B,$20,$04,$05,$0D,$0F,$20
+		!byte $2D,$20,$20,$20,$20,$20,$20,$20
+		!byte $20,$20,$20,$20,$20,$20,$20,$20
+		!byte $20,$20,$20,$20,$20,$20,$20,$20
+		!byte $20,$20,$20,$20,$20,$20,$20,$20
+		!byte $20,$20,$20,$20,$20,$20,$20,$20
+		!byte $20,$17,$09,$14,$08,$20,$14,$08
+		!byte $05,$20,$0D,$15,$13,$09,$03,$20
+		!byte $06,$12,$0F,$0D,$20,$05,$0C,$09
+		!byte $14,$05,$13,$20,$14,$08,$15,$0E
+		!byte $04,$05,$12,$20,$03,$01,$14,$13
+		!byte $2E,$20,$20,$20,$20,$20,$20,$20
+		!byte $20,$20,$20,$20,$20,$20,$20,$20
+		!byte $20,$20,$20,$20,$20,$20,$20,$20
+		!byte $20,$20,$20,$20,$20,$20,$20,$20
+		!byte $20,$20,$20,$20,$20,$20,$20,$20
+		!byte $20,$20,$20,$03,$0F,$04,$05,$20
+		!byte $02,$19,$20,$03,$12,$01,$09,$07
+		!byte $20,$14,$15,$0E,$05,$20,$05,$18
+		!byte $14,$12,$01,$03,$14,$09,$0F,$0E
+		!byte $20,$02,$19,$20,$09,$01,$0E,$20
+		!byte $20,$20,$20,$20,$20,$20,$20,$20
+		!byte $20,$20,$20,$20,$20,$20,$20,$20
+		!byte $20,$20,$20,$20,$20,$20,$20,$20
+		!byte $20,$20,$20,$20,$20,$20,$20,$20
+		!byte $20,$20,$20,$20,$20,$20,$20,$20
+		!byte $20,$20,$20,$20,$20,$20,$20,$20
+		!byte $20,$20,$20,$20,$20,$20,$20,$20
+		!byte $20,$20,$20,$20,$20,$20,$20,$20
+		!byte $20,$20,$20,$20,$08,$05,$0C,$0C
+		!byte $0F,$20,$14,$0F,$20,$2D,$20,$0A
+		!byte $05,$0E,$13,$20,$0F,$06,$20,$09
+		!byte $13,$04,$20,$2C,$20,$03,$0A,$20
+		!byte $0F,$06,$20,$14,$08,$05,$20,$09
+		!byte $16,$03,$20,$2C,$20,$02,$0F,$04
+		!byte $20,$0F,$06,$20,$08,$0F,$14,$0C
+		!byte $09,$0E,$05,$20,$2C,$20,$05,$0C
+		!byte $05,$03,$14,$12,$0F,$20,$2C,$20
+		!byte $13,$14,$01,$12,$06,$09,$12,$05
+		!byte $20,$2C,$20,$03,$08,$09,$07,$0C
+		!byte $05,$19,$20,$2C,$20,$13,$15,$10
+		!byte $05,$12,$20,$13,$01,$0D,$20,$2C
+		!byte $20,$14,$08,$05,$20,$08,$05,$12
+		!byte $0F,$20,$2C,$20,$14,$0D,$03,$20
+		!byte $2C,$20,$14,$03,$13,$20,$2C,$20
+		!byte $13,$09,$0C,$05,$0E,$14,$13,$20
+		!byte $2C,$20,$02,$05,$01,$13,$14,$09
+		!byte $05,$20,$02,$0F,$19,$13,$20,$2C
+		!byte $20,$13,$03,$07,$20,$2C,$20,$02
+		!byte $17,$02,$20,$2C,$20,$31,$30,$30
+		!byte $31,$20,$2C,$20,$0D,$01,$14,$20
+		!byte $2C,$20,$01,$0C,$0C,$20,$14,$08
+		!byte $05,$20,$0E,$05,$14,$14,$05,$12
+		!byte $13,$20,$2C,$20,$01,$0E,$04,$20
+		!byte $01,$0C,$0C,$20,$14,$08,$05,$20
+		!byte $01,$0D,$09,$07,$01,$20,$06,$12
+		!byte $05,$01,$0B,$13,$20,$2C,$20,$01
+		!byte $0E,$04,$20,$01,$0C,$0C,$20,$17
+		!byte $05,$20,$06,$0F,$12,$07,$0F,$14
+		!byte $20,$20,$20,$20,$20,$20,$20,$20
+		!byte $20,$20,$20,$20,$20,$20,$20,$00
+		
+		;*=$0AD1
+		;!bin "DATA.bin"
+
+		*=$3800
+		!bin "FONT.bin"
+		
+		*=$E000
+		!bin "MUSIC.bin"								
