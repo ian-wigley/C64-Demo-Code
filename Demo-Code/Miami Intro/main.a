@@ -1,0 +1,14 @@
+; Miami Vice Intro
+; SYS4096 ($1000) to start
+
+		*=$1000
+		SEI
+		JSR $E544
+		...
+
+
+		*=$0800
+		!bin "FONT.bin"
+		
+		*=$E000
+		!bin "MUSIC.bin"								
