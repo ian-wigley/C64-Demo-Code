@@ -55,7 +55,7 @@
 		CLI
 		LDA #$35
 		STA $01
-		JSR $FB1D
+		JSR $FB1D ; Call KERNAL SCANKEY
 		NOP
 		NOP
 		LDA #$00
