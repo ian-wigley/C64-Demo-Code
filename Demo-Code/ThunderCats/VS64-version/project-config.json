@@ -1,0 +1,13 @@
+{
+    "name": "C64testing",
+    "description": "Project C64testing",
+    "toolkit": "acme",
+    "sources": [
+        "src/main.asm"
+    ],
+    "build": "debug",
+    "definitions": [],
+    "includes": [],
+    "args": [],
+    "compiler": "C:/C64/tools/acme0.97win/acme/acme.exe"
+}
