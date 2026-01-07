@@ -206,16 +206,16 @@ branch12        STX $11BF
                 JSR label8
 branch18        RTI
 
-				*=$11bf
-				; start address:11bf-1202
-				!byte $00,$00,$00,$00,$00,$00,$00,$47
-				!byte $75,$8C,$A3,$BA,$D1,$E8,$FF,$16
-				!byte $49,$60,$77,$8E,$A5,$BC,$D3,$EA
-				!byte $C0,$C1,$C2,$C3,$C4,$C5,$C6,$C7
-				!byte $C9,$CA,$47,$5E,$75,$8C,$A3,$BA
-				!byte $E8,$FF,$16,$32,$49,$60,$77,$8E
-				!byte $BC,$D3,$EA,$FD,$00,$00,$00,$00
-				!byte $00,$00,$00,$00,$00
+                *=$11bf
+                ; start address:11bf-1202
+                !byte $00,$00,$00,$00,$00,$00,$00,$47
+                !byte $75,$8C,$A3,$BA,$D1,$E8,$FF,$16
+                !byte $49,$60,$77,$8E,$A5,$BC,$D3,$EA
+                !byte $C0,$C1,$C2,$C3,$C4,$C5,$C6,$C7
+                !byte $C9,$CA,$47,$5E,$75,$8C,$A3,$BA
+                !byte $E8,$FF,$16,$32,$49,$60,$77,$8E
+                !byte $BC,$D3,$EA,$FD,$00,$00,$00,$00
+                !byte $00,$00,$00,$00,$00
 
 ;                BRK
 ;                BRK
@@ -378,18 +378,20 @@ branch32        LDA $11FA,X
                 BNE branch32
                 RTS
 
-				*=$1300 ;$1300-$19C6
+                *=$1300 ;$1300-$19C6
                 !bin "../SCROLL_TEXT.BIN"
 
-				*=$1C00 ;$1C00–$1FFF
+                *=$1C00 ;$1C00–$1FFF
                 !bin "../SCREEN_DATA.BIN"
 
-				*=$2800 ;$2800-$3F38
+                *=$2800 ;$2800-$3F38
                 !bin "../BACKGROUND_DATA.BIN"
 
-				*=$4000 ;$4000–$43FF
+                *=$4000 ;$4000–$43FF
                 !bin "../COLOUR_DATA.BIN"
-				
+
+                *=$C000 ;$C000–$CC00
+                !bin "../MUSIC.BIN" 
 
 label0 rts ;= $E06C
 label5 rts ;= $C475
