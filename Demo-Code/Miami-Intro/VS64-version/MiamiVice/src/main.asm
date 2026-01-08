@@ -177,7 +177,7 @@ branch14        CMP #$F7
                 LDA $11C4
                 BEQ branch17
                 RTI
-branch17         LDA #$00
+branch17        LDA #$00
                 LDX #$00
                 LDY #$05
                 JSR label0
@@ -217,55 +217,7 @@ branch18        RTI
                 !byte $BC,$D3,$EA,$FD,$00,$00,$00,$00
                 !byte $00,$00,$00,$00,$00
 
-;                BRK
-;                BRK
-;                BRK
-;                BRK
-;                BRK
-;                BRK
-;                BRK
-;                SRE $5E
-;                ADC $8C,X
-;                LAX ($BA,X)
-;                NOP ;CMP
-;                INX
-;                NOP ;ISB $3216,X#
-;                NOP;
-;
-;                EOR #$60
-;                RRA $8E,X
-;                LDA $BC
-;                DCP ($EA),Y
-;                SBC $C1C0,X
-;                NOP #$C3
-;                CPY $C5
-;                DEC $C7
-;                INY
-;                CMP #$CA
-;                SRE $5E
-;                ADC $8C,X
-;                LAX ($BA,X)
-;                nop; CMP
-;                INX
-;                
-;                NOP;ISB $3217,x ;6,X
-;                NOP
-;
-;                EOR #$60
-;                RRA $8E,X
-;                LDA $BC
-;                DCP ($EA),Y
-;                SBC $0000,X
-;                BRK
-;                BRK
-;                BRK
-;                BRK
-;                BRK
-;                BRK
-;                BRK
-;                BRK
-
-;*=$1203
+                *=$1203
 label2          STA $D001
                 STA $D003
                 STA $D005
@@ -390,9 +342,17 @@ branch32        LDA $11FA,X
                 *=$4000 ;$4000–$43FF
                 !bin "../COLOUR_DATA.BIN"
 
-                *=$C000 ;$C000–$CC00
-                !bin "../MUSIC.BIN" 
+                *=$BFFE ;$C000–$CC00
+                !bin "../MUSIC.BIN"
 
-label0 rts ;= $E06C
-label5 rts ;= $C475
-label7 rts ;= $E0B2
+                *=$DFFE
+                !bin "../E000-F000.BIN"
+
+;label0 rts
+label0 = $E06C
+
+;label5 rts
+label5= $C475
+
+;label7 rts ;= $E0B2
+label7 = $E0B2
