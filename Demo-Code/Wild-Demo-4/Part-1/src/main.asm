@@ -404,7 +404,7 @@ label2          LDA #$00
                 !text "DATE 31:12:87  TIME 11:27 PM (NEARLY NEW YEAR!)      BYE U PEEPS !     @"
 
                 *=$2000 ;$2000-3000
-                !bin "../music-2000-3000.bin"
+                !bin "../binaries/music-2000-3000.bin"
 
 label0 = $E544
 label1 = $2102
