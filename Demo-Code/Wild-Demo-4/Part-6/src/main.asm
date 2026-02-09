@@ -1,3 +1,7 @@
+; ************* Part-6 ************* ;
+;                                    ;
+;          SYS 2304 to start
+
                 *=$0900
                 LDA #$36
                 STA $01
@@ -48,6 +52,7 @@ branch0         LDA $0C86,X
                 STA $0315
                 LDA #$00
                 STA $DC0E
+; 0978
                 LDA #$7F
                 STA $DC0D
                 LDA #$01
@@ -83,6 +88,7 @@ branch2         LDA $D019
                 BEQ branch2
                 STA $D019
                 RTS
+;09D0
                 JSR $09C5 ;label7
                 LDA #$0C
                 STA $D020
@@ -121,7 +127,7 @@ branch3         DEY
                 CLI
                 JSR label12
                 JMP label13
-                JSR label7
+                JSR $09C5 ;label7
                 LDA #$A0
                 STA $D012
                 LDA #$D0
@@ -407,10 +413,10 @@ label4 = $0C63
 label16 = $0C28
 label17 = $0C62
 label5 = $0B38
-label6 = $6B00
-label15 = $5101
-label1 = $57A5
-label2 = $5BA6
+label6 rts ;= $6B00
+label15 rts ;= $5101
+label1 rts ;= $57A5
+label2 rts ;= $5BA6
 
 
 
