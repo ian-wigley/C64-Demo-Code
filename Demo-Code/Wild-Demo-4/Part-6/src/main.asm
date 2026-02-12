@@ -31,7 +31,7 @@
                 STA $FC
                 JSR label3
                 LDX #$00
-branch0         LDA $0C86,X
+branch0         LDA $0C86,X ; 0944
                 AND #$3F
                 STA $0400,X
                 LDA #$00
@@ -52,7 +52,6 @@ branch0         LDA $0C86,X
                 STA $0315
                 LDA #$00
                 STA $DC0E
-; 0978
                 LDA #$7F
                 STA $DC0D
                 LDA #$01
@@ -62,7 +61,7 @@ branch0         LDA $0C86,X
                 STA $D012
 branch1         CLI
                 LDA $DC01
-                CMP #$EF
+                CMP #$EF ; Compare if space has been pressed
                 BNE branch1
                 LDA #$00
                 STA $D015
@@ -82,7 +81,7 @@ branch1         CLI
                 LDA #$EA
                 STA $0315
                 CLI
-                JMP label6
+                RTS ; JMP label6
 branch2         LDA $D019
                 AND #$01
                 BEQ branch2
@@ -113,10 +112,10 @@ branch3         DEY
                 LDA #$0A
                 STA $0315
                 CLI
-                JSR label8
-                JSR label9
-                JSR label10
-                JMP label11
+                JSR label8  ; OK
+                JSR $0AEA ;label9  ; Wrong should be $0AEA & not $0B88
+                JSR $0BBA ;label10 ; Wrong should be $0BBA & not $0C5A
+                JMP label11 ; OK
                 JSR $09C5 ;label7
                 LDA #$70
                 STA $D012
@@ -125,7 +124,7 @@ branch3         DEY
                 LDA #$0A
                 STA $0315
                 CLI
-                JSR label12
+                JSR $0B07 ;label12  ; Wrong should be $0B07 & not $0BA4
                 JMP label13
                 JSR $09C5 ;label7
                 LDA #$A0
@@ -135,8 +134,8 @@ branch3         DEY
                 LDA #$09
                 STA $0315
                 CLI
-                JSR label14
-                JSR label15
+                JSR label14 ; OK
+                JSR label15 ; OK
                 JMP label13
 label8          LDX #$00
                 LDA $D012
@@ -267,10 +266,17 @@ branch9         STA $D800,X
                 !byte $0F, $0F, $0C
                 !byte $0C, $0B, $00
                 !byte $00
-                !byte $FF, $78, $A9
-                !byte $7F, $2D, $11
-                !byte $D0, $8D
-                !byte $11, $D0
+                !byte $FF
+
+;                , $78, $A9
+;                !byte $7F, $2D, $11
+;                !byte $D0, $8D
+;                !byte $11, $D0
+
+label5          SEI ;$0B38
+                LDA #$7F
+                AND $D011
+                STA $D011
                 LDA #$08
                 ORA #$C0
                 STA $D016
@@ -365,7 +371,8 @@ branch10        ROL $2000,X
                 STA $0C6F
                 JSR label16
 branch12        RTS
-                LDY #$00
+
+label16         LDY #$00
                 LDA ($08),Y
                 AND #$3F
                 BNE branch13
@@ -398,33 +405,25 @@ branch11        INX
                 INY
                 CPY #$08
                 BNE branch16
-                RTS
-                LDA #$89
+label17         RTS
+; $0C63
+label4          LDA #$89
                 STA $08
                 LDA #$0D
                 STA $09
                 RTS
-label0 = $FFD2
-label3 = $E544
-label11 = $EA31
-label13 = $EA7E
-
-label4 = $0C63
-label16 = $0C28
-label17 = $0C62
-label5 = $0B38
-label6 rts ;= $6B00
-label15 rts ;= $5101
-label1 rts ;= $57A5
-label2 rts ;= $5BA6
-
-
-
-
+    *=$0c6c
+    ; start address:0c6c-0c89
+    !byte $00,$00,$00,$04,$00,$00,$00,$00
+    !byte $00,$00,$00,$00,$00,$00,$00,$00
+    !byte $00,$00,$00,$00,$00,$00,$00,$00
+    !byte $00,$00;,$20,$20,$20,$54
 
     *=$0C86
-    !text "   THE WILD STYLES OF SIGMA PRESENTS           YET ANOTHER MUSICAL PART           "
-    !text "----------------------------------                 THIS DEMO WAS WRITTEN 25:12:87 "
+    !text "   THE WILD STYLES OF SIGMA PRESENTS       "
+    !text "        YET ANOTHER MUSICAL PART           "
+    !text "----------------------------------         "
+    !text "        THIS DEMO WAS WRITTEN 25:12:87 "
     !text "                        WELCOME TO THE SECOND PART OF MY COLOURFUL MUSIC DEMO   "
     !text "THIS DEMO IS MY FIRST MAJOR DEMO, IT WAS WRITTEN ON CHRISTMAS DAY 1987 !   PRESS "
     !text "THE LONG ONE TO CONTINUE  OR HANG AROUND TO SEE THE GREETINGS, WHICH WILL ONLY "
@@ -455,3 +454,43 @@ label2 rts ;= $5BA6
     !text "INTERESTED IT'S NOW 11:32 PM AND I DIDN'T GET DRUNK !!   THE COOL MUSIC WAS RIPPED , RELOCATED ON THE 25:12:87 "
     !text "AND IS FROM INSIDE OUTING  BY THE EDGE    I'M OFF FOR SURE THIS TIME, JUST GONNA FIX THE KEY PRESS ROUTINE "
     !text "& WATCH AIRPLANE II                                                   @"
+
+label0 = $FFD2
+label3 = $E544
+label11 = $EA31
+label13 = $EA7E
+label6 = $6B00
+label15 = $5101
+label1 = $57A5
+label2 = $5BA6
+
+    *=$3000
+    !bin "../binaries/font-3000-3200.bin"
+
+    *=$5000
+    !bin "../binaries/music-5000-6000.bin"
+
+    *=$6B00
+    SEI
+    LDA #$00
+    STA $FA
+    LDA #$70
+    STA $FB        
+    LDA #$01
+    STA $FC
+    LDA #$08
+    STA $FD
+    LDY #$00
+    LDA ($FA),Y
+    STA ($FC),Y
+    INY
+    BNE $6B13
+    INC $FB
+    INC $FD
+    LDA $FB
+    CMP #$9D
+    BNE $6B11
+    CLI
+    LDA #$15
+    STA $D018
+    JMP $0818
