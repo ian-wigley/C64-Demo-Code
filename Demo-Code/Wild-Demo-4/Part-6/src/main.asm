@@ -41,8 +41,8 @@ branch0         LDA $0C86,X ; 0944
                 STA $DB00,X
                 INX
                 BNE branch0
-                JSR label4
-                JSR label5
+                JSR $0C63; JSR label4
+                JSR $0B38 ;JSR label5
                 LDA #$00
                 STA $D020
                 STA $D021
@@ -81,7 +81,7 @@ branch1         CLI
                 LDA #$EA
                 STA $0315
                 CLI
-                RTS ; JMP label6
+                JMP $6B00 ;RTS ; JMP label6
 branch2         LDA $D019
                 AND #$01
                 BEQ branch2
@@ -362,7 +362,7 @@ branch10        ROL $2000,X
                 INX
                 INX
                 CPX #$3F
-                BNE branch11
+                BNE $0BBC; BNE branch11  ** BUG **
                 INC $0C6F
                 LDX $0C6F
                 CPX #$08
@@ -420,11 +420,25 @@ label4          LDA #$89
     !byte $00,$00;,$20,$20,$20,$54
 
     *=$0C86
-    !text "   THE WILD STYLES OF SIGMA PRESENTS       "
-    !text "        YET ANOTHER MUSICAL PART           "
-    !text "----------------------------------         "
-    !text "        THIS DEMO WAS WRITTEN 25:12:87 "
-    !text "                        WELCOME TO THE SECOND PART OF MY COLOURFUL MUSIC DEMO   "
+
+    !TEXT "     THE WILD STYLES OF SIGMA PRESENTS    "
+    !TEXT "         YET ANOTHER MUSICAL PART         "
+    !TEXT "    ----------------------------------    "
+    !TEXT "   WRITE TO 27 GARTH CRESCENT, ALVASTON,  "
+    !TEXT "         DERBY. DE2 OGX. ENGLAND          "
+    !TEXT "      THIS DEMO WAS WRITTEN 25:12:87      "
+    !TEXT "                     WELCOME TO THE SECOND"
+
+
+
+    ;!text "   THE WILD STYLES OF SIGMA PRESENTS       "
+    ;!text "        YET ANOTHER MUSICAL PART           "
+    ;!text "----------------------------------         "
+    ;!text "        THIS DEMO WAS WRITTEN 25:12:87 "
+    ;!text "                        WELCOME TO THE SECOND PART OF MY COLOURFUL MUSIC DEMO   "
+    ;!text "               WELCOME TO THE SECOND PART OF MY COLOURFUL MUSIC DEMO   "
+    ;*=$0CB3
+    !text " PART OF MY COLOURFUL MUSIC DEMO   "
     !text "THIS DEMO IS MY FIRST MAJOR DEMO, IT WAS WRITTEN ON CHRISTMAS DAY 1987 !   PRESS "
     !text "THE LONG ONE TO CONTINUE  OR HANG AROUND TO SEE THE GREETINGS, WHICH WILL ONLY "
     !text "APPEAR IN THIS PART ...       NOW ONTO SOME GREETINGS ... HI TO LYNX AND THE REST "
@@ -464,8 +478,14 @@ label15 = $5101
 label1 = $57A5
 label2 = $5BA6
 
+    *=$2015
+    !bin "../binaries/memory-2015-2200.bin"
+
     *=$3000
     !bin "../binaries/font-3000-3200.bin"
+
+    *=$3800 
+    !bin "../binaries/memory-3800-3a00.bin"
 
     *=$5000
     !bin "../binaries/music-5000-6000.bin"
