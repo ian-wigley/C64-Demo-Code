@@ -1,6 +1,8 @@
 ; ************* Part-6 ************* ;
 ;                                    ;
 ;          SYS 2304 to start
+;                                    ;
+; ********************************** ;
 
                 *=$0900
                 LDA #$36
@@ -81,7 +83,7 @@ branch1         CLI
                 LDA #$EA
                 STA $0315
                 CLI
-                JMP $6B00 ;RTS ; JMP label6
+                JMP label6
 branch2         LDA $D019
                 AND #$01
                 BEQ branch2
@@ -134,8 +136,8 @@ branch3         DEY
                 LDA #$09
                 STA $0315
                 CLI
-                JSR label14 ; OK
-                JSR label15 ; OK
+                JSR label14
+                JSR label15
                 JMP label13
 label8          LDX #$00
                 LDA $D012
@@ -267,13 +269,8 @@ branch9         STA $D800,X
                 !byte $0C, $0B, $00
                 !byte $00
                 !byte $FF
-
-;                , $78, $A9
-;                !byte $7F, $2D, $11
-;                !byte $D0, $8D
-;                !byte $11, $D0
-
-label5          SEI ;$0B38
+ ; *=$0B38
+label5          SEI
                 LDA #$7F
                 AND $D011
                 STA $D011
@@ -321,7 +318,7 @@ label9          INX
                 LDA #$01
                 STA $D027
                 STA $D028
-label12          STA $D029
+label12         STA $D029
                 STA $D02A
                 STA $D02B
                 STA $D02C
@@ -420,25 +417,15 @@ label4          LDA #$89
     !byte $00,$00;,$20,$20,$20,$54
 
     *=$0C86
+    !text "   THE WILD STYLES OF SIGMA PRESENTS    "
+    !text "        YET ANOTHER MUSICAL PART        "
+    !text "   ----------------------------------   "
+    !text "     THIS DEMO WAS WRITTEN 25:12:87     "
+    !text "                                        "
+    !text "                                        "
 
-    !TEXT "     THE WILD STYLES OF SIGMA PRESENTS    "
-    !TEXT "         YET ANOTHER MUSICAL PART         "
-    !TEXT "    ----------------------------------    "
-    !TEXT "   WRITE TO 27 GARTH CRESCENT, ALVASTON,  "
-    !TEXT "         DERBY. DE2 OGX. ENGLAND          "
-    !TEXT "      THIS DEMO WAS WRITTEN 25:12:87      "
-    !TEXT "                     WELCOME TO THE SECOND"
-
-
-
-    ;!text "   THE WILD STYLES OF SIGMA PRESENTS       "
-    ;!text "        YET ANOTHER MUSICAL PART           "
-    ;!text "----------------------------------         "
-    ;!text "        THIS DEMO WAS WRITTEN 25:12:87 "
-    ;!text "                        WELCOME TO THE SECOND PART OF MY COLOURFUL MUSIC DEMO   "
-    ;!text "               WELCOME TO THE SECOND PART OF MY COLOURFUL MUSIC DEMO   "
     ;*=$0CB3
-    !text " PART OF MY COLOURFUL MUSIC DEMO   "
+    !text "                        WELCOME TO THE SECOND PART OF MY COLOURFUL MUSIC DEMO   "
     !text "THIS DEMO IS MY FIRST MAJOR DEMO, IT WAS WRITTEN ON CHRISTMAS DAY 1987 !   PRESS "
     !text "THE LONG ONE TO CONTINUE  OR HANG AROUND TO SEE THE GREETINGS, WHICH WILL ONLY "
     !text "APPEAR IN THIS PART ...       NOW ONTO SOME GREETINGS ... HI TO LYNX AND THE REST "
@@ -478,9 +465,6 @@ label15 = $5101
 label1 = $57A5
 label2 = $5BA6
 
-    *=$2015
-    !bin "../binaries/memory-2015-2200.bin"
-
     *=$3000
     !bin "../binaries/font-3000-3200.bin"
 
@@ -492,6 +476,9 @@ label2 = $5BA6
 
     *=$6B00
     SEI
+    JSR label3
+    RTS
+
     LDA #$00
     STA $FA
     LDA #$70
