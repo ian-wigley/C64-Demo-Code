@@ -14,6 +14,10 @@ The source code can be debugged using the VSCode VS64 extension and the ACME com
 
 ![](Demo-Code/Wild-Demo-4/Part-2/ScreenShot.jpg)
 
+![](Demo-Code/Wild-Demo-4/Part-3_and-4/ScreenShotPart3.jpg)
+
+![](Demo-Code/Wild-Demo-4/Part-3_and-4/ScreenShotPart4.jpg)
+
 ![](Demo-Code/Wild-Demo-4/Part-5/ScreenShot.jpg)
 
 ![](Demo-Code/Wild-Demo-4/Part-6/ScreenShot.jpg)
