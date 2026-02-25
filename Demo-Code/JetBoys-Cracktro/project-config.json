@@ -1,0 +1,13 @@
+{
+    "name": "Jetboys-Cracktro",
+    "description": "Jetboys Cracktro",
+    "toolkit": "acme",
+    "sources": [
+        "src/main.asm"
+    ],
+    "build": "debug",
+    "definitions": [],
+    "includes": [],
+    "args": [],
+    "compiler": ""
+}
