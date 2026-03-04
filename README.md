@@ -10,11 +10,18 @@ The source code can be debugged using the VSCode VS64 extension and the ACME com
 
 ## Wild Demo I
 
+Coming Soon !
+
 ## Wild Demo II
+
+Coming Soon !
 
 ## Wild Demo III
 
+Coming Soon !
+
 ## Wild Demo IV
+
 
 ![](Demo-Code/Wild-Demo-4/Part-1/ScreenShot.jpg)
 
@@ -29,3 +36,11 @@ The source code can be debugged using the VSCode VS64 extension and the ACME com
 ![](Demo-Code/Wild-Demo-4/Part-6/ScreenShot.jpg)
 
 ![](Demo-Code/Wild-Demo-4/Part-7/ScreenShot.jpg)
+
+## JetBoys Cracktro
+
+![](Demo-Code/JetBoys-Cracktro/ScreenShot.png)
+
+## Trantor Cracktro
+
+![](Demo-Code/Trantor-Cracktro/ScreenShot.png)
