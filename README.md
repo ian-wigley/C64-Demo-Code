@@ -18,7 +18,9 @@ Coming Soon !
 
 ## Wild Demo III
 
-Coming Soon !
+![](Demo-Code/Wild-Demo-3/Part-1/ScreenShot.jpg)
+
+
 
 ## Wild Demo IV
 
