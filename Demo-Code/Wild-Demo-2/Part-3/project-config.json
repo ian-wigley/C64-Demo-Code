@@ -1,6 +1,6 @@
 {
-    "name": "Part-2",
-    "description": "Project Part-2",
+    "name": "Part-3",
+    "description": "Project Part-3",
     "toolkit": "acme",
     "sources": [
         "src/main.asm"
