@@ -70,6 +70,7 @@ branch4         LDA $0880,Y
                 BNE branch4
                 JMP label2
         
+                ;!text = ""
                 *=$087D
                 !byte $00
                 !byte $00
