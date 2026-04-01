@@ -70,62 +70,20 @@ branch4         LDA $0880,Y
                 BNE branch4
                 JMP label2
         
-                ;!text = ""
                 *=$087D
-                !byte $00
-                !byte $00
-                !byte $00
-                !byte $13, $03
-                !byte $0F, $12, $05
-                !byte $3A
-                !byte $30, $30
-                !byte $30, $30
-                !byte $30, $30
-                !byte $80, $80
-                !byte $80, $80
-                !byte $3B, $3B, $3B
-                !byte $3B, $3B, $80
-                !byte $80, $80
-                !byte $80, $80
-                !byte $80, $80
-                !byte $80, $08
-                !byte $09, $07
-                !byte $08
-                !byte $3A
-                !byte $30, $30
-                !byte $30, $33
-                !byte $37, $35
-                !byte $3E, $3C, $3C
-                !byte $3C, $3C, $3C
-                !byte $3C, $3C, $3C
-                !byte $3C, $3C, $3C
-                !byte $3C, $3C, $3C
-                !byte $3C, $3C, $3C
-                !byte $3C, $3C, $3C
-                !byte $3C, $3C, $3C
-                !byte $3C, $3C, $3C
-                !byte $3C, $3C, $3C
-                !byte $3C, $3C, $3C
-                !byte $3C, $3C, $3C
-                !byte $3C, $3C, $3C
-                !byte $3D, $10, $01
-                !byte $03, $3A
-                !byte $77, $77
-                !byte $77, $77
-                !byte $77, $77
-                !byte $77, $77
-                !byte $77, $77
-                !byte $77, $77
-                !byte $77, $77
-                !byte $77, $77
-                !byte $76, $12
-                !byte $0F, $03, $0B
-                !byte $05, $14
-                !byte $20, $06, $15
-                !byte $05, $0C
-                !byte $3A
-                !byte $20, $20, $20
-                !byte $20, $20, $20
+                !text "   "
+                !byte $13, $03, $0F, $12, $05
+                !text ":000000"
+                !byte $80, $80, $80, $80
+                !text ";;;;;"
+                !byte $80 ,$80, $80, $80, $80, $80, $80, $80, $08
+                !byte $09, $07, $08
+                !text ":000375"
+                !text "><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<="
+                !byte $10, $01, $03
+                !text ":wwwwwwwwwwwwwwwwv"
+                !byte $12, $0F, $03, $0B, $05, $14, $20, $06, $15
+                !byte $05, $0C, $3A, $20, $20, $20, $20, $20, $20
                 !byte $20
 
                 LDA #$3E
