@@ -3122,20 +3122,22 @@ branch340       JSR label222
                 INX
                 BNE branch341
                 RTS
-*=$21D8
-!byte $02
-!byte $02
-!byte $02
-!byte $06, $06
-!byte $06, $06
-!byte $00
-!byte $18
-!byte $4C, $80, $C0
-!byte $F4, $28
-!byte $00
-!byte $00
-!byte $C9, $28
-!byte $D0, $0D
+                
+                *=$21D8
+                !byte $02
+                !byte $02
+                !byte $02
+                !byte $06, $06
+                !byte $06, $06
+                !byte $00
+                !byte $18
+                !byte $4C, $80, $C0
+                !byte $F4, $28
+                !byte $00
+                !byte $00
+                !byte $C9, $28
+                !byte $D0, $0D
+
                 LDA $D010
                 AND #$03
                 BNE  $21F6; check branch343
@@ -3161,13 +3163,13 @@ label217        STA $07F8
                 LDA #$E4
                 STA $07FD
                 RTS
-label220          CMP #$02
+label220        CMP #$02
                 BEQ branch345
                 CMP #$06
                 BEQ branch345
                 RTS
                 BRK
-branch345         STA $D029,X
+branch345       STA $D029,X
                 LDA #$00
                 STA $D40B
                 LDA #$08
@@ -3180,7 +3182,7 @@ branch345         STA $D029,X
                 STA $D407
                 STA $D408
                 RTS
-label218          LDA $07F9
+label218        LDA $07F9
                 CMP #$DE
                 BNE branch346
                 LDA #$DC
@@ -3264,7 +3266,7 @@ branch357       LDA #$07
                 STA $F8
                 JSR label227
                 LDX #$00
-branch356         LDY #$00
+branch356       LDY #$00
                 LDA #$20
                 STA ($F8),Y
                 STX $B1
@@ -3275,7 +3277,7 @@ branch356         LDY #$00
                 STA $F8
                 BCS $230E
                 DEC $F9
-branch355         LDA $235B,X
+branch355       LDA $235B,X
                 STA ($F8),Y
                 LDA $F8
                 STA $FB
@@ -3295,7 +3297,7 @@ branch355         LDA $235B,X
                 CMP #$09
                 BNE branch357
                 JMP label229
-label227          CLC
+label227        CLC
                 LDA $F8
                 ADC $FF
                 STA $F8
@@ -3325,7 +3327,7 @@ label227          CLC
                 !byte $D0, $F5
                 !byte $60
 
-label229          LDA #$81
+label229        LDA #$81
                 STA $D412
                 LDA #$60
                 STA $D001
@@ -3347,9 +3349,9 @@ label229          LDA #$81
                 LDA #$23
                 STA $FB
                 LDX #$05
-branch361         STX $F9
+branch361       STX $F9
                 LDY #$00
-branch360         LDA ($FA),Y
+branch360       LDA ($FA),Y
                 STA ($F8),Y
                 LDA $F8
                 STA $FC
@@ -3383,6 +3385,7 @@ branch360         LDA ($FA),Y
                 !byte $00
                 !byte $00
                 !byte $00
+;23e0
                 !byte $20, $20, $20
                 !byte $20, $20, $20
                 !byte $20, $20, $20
