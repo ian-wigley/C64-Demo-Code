@@ -2255,10 +2255,10 @@ label163        JSR label164
                 LDA $033D
                 BNE branch253
                 RTS
-branch253         PLA
+branch253       PLA
                 PLA
                 JMP label165
-label61          LDX $23
+label61         LDX $23
                 STX $27
                 LDX $24
                 STX $28
