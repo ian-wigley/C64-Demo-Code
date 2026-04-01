@@ -2264,8 +2264,8 @@ label61         LDX $23
                 STX $28
                 CMP $03E8
                 BNE branch254
-branch256         JMP label166
-branch254         CMP $03EA
+branch256       JMP label166
+branch254       CMP $03EA
                 BNE branch255
                 SEC
                 LDA $27
@@ -2273,8 +2273,8 @@ branch254         CMP $03EA
                 STA $27
                 BCS $1A8E
                 DEC $28
-branch258         JMP label166
-branch255         CMP $03E9
+branch258       JMP label166
+branch255       CMP $03E9
                 BNE branch257
                 SEC
                 LDA $27
@@ -2282,23 +2282,23 @@ branch255         CMP $03E9
                 STA $27
                 BCS $1AA1
                 DEC $28
-branch260         JMP label166
-branch257         CMP $03EB
+branch260       JMP label166
+branch257       CMP $03EB
                 BEQ branch259
                 JMP label167
-branch259         SEC
+branch259       SEC
                 LDA $27
                 SBC #$29
                 STA $27
                 BCS $1AB4
                 DEC $28
-label166          JSR label168
+label166        JSR label168
                 LDA $27
                 STA $F8
                 LDA $28
                 STA $F9
                 LDX #$00
-branch262         LDY $16D0,X
+branch262       LDY $16D0,X
                 LDA $F8
                 CMP $7800,Y
                 BNE branch261
@@ -2306,7 +2306,7 @@ branch262         LDY $16D0,X
                 CMP $7801,Y
                 BNE branch261
                 JMP label169
-branch261         INX
+branch261       INX
                 CPX #$0C
                 BNE branch262
                 BRK
@@ -2329,16 +2329,16 @@ label192        INC $0334
                 ROR
                 BCC $1B18
                 RTS
-branch263         JMP label172
+branch263       JMP label172
                 JSR label107
                 BRK
                 BRK
-label108          LDA $0334
+label108        LDA $0334
                 CMP #$03
                 BEQ branch264
                 INC $0334
                 RTS
-branch264         LDA #$00
+branch264       LDA #$00
                 STA $0334
                 JMP label173
                 BRK
@@ -2351,11 +2351,11 @@ branch264         LDA #$00
                 BRK
                 BRK
                 BRK
-label172          ROR
+label172        ROR
                 BCC $1B41
                 RTS
-branch265         JMP label173
-label178          CLC
+branch265       JMP label173
+label178        CLC
                 LDA $F8
                 ADC #$29
                 STA $FC
@@ -2363,7 +2363,7 @@ label178          CLC
                 ADC #$00
                 STA $FD
                 RTS
-label174          SEC
+label174        SEC
                 LDA $F8
                 SBC #$29
                 STA $FC
@@ -2371,7 +2371,7 @@ label174          SEC
                 SBC #$00
                 STA $FD
                 RTS
-label179          CLC
+label179        CLC
                 LDA $F8
                 ADC #$27
                 STA $FC
@@ -2379,7 +2379,7 @@ label179          CLC
                 ADC #$00
                 STA $FD
                 RTS
-label176          SEC
+label176        SEC
                 LDA $F8
                 SBC #$27
                 STA $FC
@@ -2387,7 +2387,7 @@ label176          SEC
                 SBC #$00
                 STA $FD
                 RTS
-label180          LDX $B1
+label180        LDX $B1
                 LDY $16D0,X
                 LDA $7805,Y
                 BNE branch266
@@ -2396,7 +2396,7 @@ label180          LDX $B1
                 CLC
                 ADC #$01
                 STA $7805,Y
-branch266         CMP #$01
+branch266       CMP #$01
                 BNE branch267
                 LDA $FB
                 BEQ branch268
