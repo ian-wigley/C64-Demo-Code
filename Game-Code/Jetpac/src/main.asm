@@ -1054,7 +1054,7 @@ branch145       LDA $D000
                 BEQ branch147
 branch147         LDA #$01
                 STA $0390
-label87          LDA #$00
+label87         LDA #$00
                 STA $D40B
                 LDA #$09
                 STA $D40C
