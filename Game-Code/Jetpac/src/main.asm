@@ -1065,7 +1065,7 @@ label87          LDA #$00
                 STA $D408
                 STA $D407
                 RTS
-label91          LDX #$04
+label91         LDX #$04
                 JMP label80
                 BRK
                 BRK
