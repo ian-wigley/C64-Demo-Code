@@ -1052,7 +1052,7 @@ branch145       LDA $D000
                 LDA $0398
                 CMP #$02
                 BEQ branch147
-branch147         LDA #$01
+branch147       LDA #$01
                 STA $0390
 label87         LDA #$00
                 STA $D40B
