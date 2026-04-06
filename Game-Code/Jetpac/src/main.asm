@@ -1185,7 +1185,7 @@ branch164       CMP #$45
                 BCS $11D0
 branch166       INC $D009,X
                 RTS
-branch167         CMP #$38
+branch167       CMP #$38
                 BCS $11CC
                 RTS
 branch165       CMP #$5D
@@ -1196,7 +1196,7 @@ branch165       CMP #$5D
                 CMP #$58
                 BCS $11CC
                 RTS
-branch168         CMP #$7D
+branch168       CMP #$7D
                 BNE branch166
                 LDA $D008,X
                 CMP #$7E
