@@ -1183,7 +1183,7 @@ branch164       CMP #$45
                 LDA $D008,X
                 CMP #$04
                 BCS $11D0
-branch166         INC $D009,X
+branch166       INC $D009,X
                 RTS
 branch167         CMP #$38
                 BCS $11CC
