@@ -945,16 +945,16 @@ label170        LDA $FC ; Fire
                 STA $F8
                 BCS $0FC8
                 DEC $F9
-branch133         LDA #$00
+branch133       LDA #$00
                 STA $FD
                 RTS
-branch132         CLC
+branch132       CLC
                 LDA $F8
                 ADC $FD
                 STA $F8
                 BCC $0FD8
                 INC $F9
-branch134         CLC
+branch134       CLC
                 LDA $FC
                 ADC $FD
                 CLC
