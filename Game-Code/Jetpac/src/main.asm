@@ -1209,7 +1209,7 @@ branch168         CMP #$7D
                 BRK
 label191          LDA $0398
                 BEQ branch169
-branch170         RTS
+branch170       RTS
 branch169         LDA $D000
                 CMP $D00A
                 BNE branch170
