@@ -1207,7 +1207,7 @@ branch168         CMP #$7D
                 BRK
                 BRK
                 BRK
-label191          LDA $0398
+label191        LDA $0398
                 BEQ branch169
 branch170       RTS
 branch169       LDA $D000
@@ -1224,12 +1224,12 @@ branch169       LDA $D000
                 JMP label87
                 STA $6D,X
                 SAX $1C
-label115          LDA $D41B
+label115        LDA $D41B
                 STA $121F
                 LDA $121E
                 STA $1220
                 LDY #$07
-branch171         ASL $121D
+branch171       ASL $121D
                 ROL $121E
                 DEY
                 BNE branch171
