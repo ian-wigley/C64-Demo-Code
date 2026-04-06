@@ -1188,7 +1188,7 @@ branch166         INC $D009,X
 branch167         CMP #$38
                 BCS $11CC
                 RTS
-branch165         CMP #$5D
+branch165       CMP #$5D
                 BNE branch168
                 LDA $D008,X
                 CMP #$22
