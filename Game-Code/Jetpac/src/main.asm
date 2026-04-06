@@ -1175,7 +1175,7 @@ branch159       JMP label86
                 CMP #$D5
                 BNE branch164
                 RTS
-branch164         CMP #$45
+branch164       CMP #$45
                 BNE branch165
                 LDA $D010
                 AND $12B5,X
