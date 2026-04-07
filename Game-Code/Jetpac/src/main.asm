@@ -1311,19 +1311,19 @@ branch178       LDA $0341
 branch179       LDA $D010
                 AND $12B5,X
                 BNE branch180
-branch181         LDA $0340
+branch181       LDA $0340
                 SBC $D008,X
                 BCS $12F2
                 EOR #$FF
-branch182         CMP #$0C
+branch182       CMP #$0C
                 BCS $12D0
                 LDA #$01
                 JSR label93
                 RTS
-label102          LDA $03A0
+label102        LDA $03A0
                 BNE branch183
-branch184         RTS
-branch183         CMP #$03
+branch184       RTS
+branch183       CMP #$03
                 BEQ branch184
                 LDX #$04
                 JSR label94
