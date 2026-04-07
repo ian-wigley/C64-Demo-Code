@@ -611,27 +611,27 @@ branch91        CMP #$C1
                 LDA $F9
                 CMP #$18
                 BCS $0D43
-branch95         JMP label47
-branch94         CMP #$2C
+branch95        JMP label47
+branch94        CMP #$2C
                 BCS $0D40
-branch96         JMP label48
-label47          CMP #$52
+branch96        JMP label48
+label47         CMP #$52
                 BCS $0D47
                 NOP
                 CMP #$5E
                 BCS $0D47
                 RTS
-branch93         LDA $F8
+branch93        LDA $F8
                 CMP #$7C
                 BNE branch97
                 LDA $F9
                 CMP #$78
                 BCS $0D63
-branch99         JMP label49
-branch98         CMP #$8C
+branch99        JMP label49
+branch98        CMP #$8C
                 BCS $0D60
-branch100         JMP label48
-label49          CMP #$B2
+branch100       JMP label48
+label49         CMP #$B2
                 BCS $0D67
                 NOP
                 CMP #$C0
