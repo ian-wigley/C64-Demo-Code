@@ -1342,11 +1342,11 @@ label86         LDA $D009,X
                 CMP #$D6
                 BEQ branch187
                 JMP label96
-branch187         LDA $D008,X
+branch187       LDA $D008,X
                 CMP #$E0
                 BEQ branch188
-branch189         RTS
-branch188         CPX #$04
+branch189       RTS
+branch188       CPX #$04
                 BNE branch189
                 LDA #$00
                 STA $03A0
