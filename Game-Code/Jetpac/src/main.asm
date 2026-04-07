@@ -884,7 +884,7 @@ branch127       CMP $2FC8,X
                 CPX #$0F
                 BNE branch127
                 JMP label58
-branch126         TXA
+branch126       TXA
                 ASL
                 ASL
                 CLC
@@ -892,16 +892,16 @@ branch126         TXA
                 TAX
                 LDA $2F88,X
                 JMP label63
-label60          LDY #$00
+label60         LDY #$00
                 LDA ($23),Y
                 LDX #$00
-branch129         CMP $2FC8,X
+branch129       CMP $2FC8,X
                 BEQ branch128
                 INX
                 CPX #$0F
                 BNE branch129
                 JMP label64
-branch128         TXA
+branch128       TXA
                 ASL
                 ASL
                 CLC
