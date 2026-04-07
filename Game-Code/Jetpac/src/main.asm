@@ -540,8 +540,8 @@ branch84        CMP #$DA
                 ADC #$DC
                 JSR label44
                 RTS
-label43          STX $07F8
-branch78         LDA $07F9
+label43         STX $07F8
+branch78        LDA $07F9
                 AND #$10
                 BEQ $0CAE ; check branch86
                 LDA #$DA
@@ -559,7 +559,7 @@ branch78         LDA $07F9
                 CLC
                 ADC #$04
                 STA $D010
-branch87         LDA $D015
+branch87        LDA $D015
                 CLC
                 ADC #$04
                 STA $D015
@@ -572,7 +572,7 @@ branch87         LDA $D015
                 ADC #$04
                 STA $07FA
                 RTS
-label44          STA $07F9
+label44         STA $07F9
                 LDA $D015
                 AND #$FB
                 STA $D015
