@@ -581,19 +581,19 @@ label44         STA $07F9
                 BRK
                 BRK
                 BRK
-label117          LDA $0349
+label117        LDA $0349
                 BNE branch88
                 JMP label45
-branch88         LSR $034B
+branch88        LSR $034B
                 BCS $0D10
                 JMP label46
-branch89         LDA #$04
+branch89        LDA #$04
                 STA $034B
                 JMP label45
-label40          LDA $FA
+label40         LDA $FA
                 BEQ branch90
                 RTS
-branch90         PLA
+branch90        PLA
                 PLA
                 RTS
 label11          LDA #$00
