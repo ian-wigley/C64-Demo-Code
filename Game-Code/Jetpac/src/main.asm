@@ -714,8 +714,8 @@ label145        LDA $0342
                 STA $23
                 BCS $0E0B
                 DEC $24 ; move up
-branch108         LDA $0340
-label245          STA $27
+branch108       LDA $0340
+label245        STA $27
                 LDA $0341
                 STA $28
                 LSR $28
@@ -803,7 +803,7 @@ branch118       LDA $0350,Y
                 LDX $02
                 LDY $0E89,X
                 JSR label55
-branch117         LDX $02
+branch117       LDX $02
                 INX
                 CPX #$06
                 BNE branch119
