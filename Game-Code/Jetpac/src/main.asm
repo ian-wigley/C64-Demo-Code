@@ -483,21 +483,21 @@ branch73         LDA $F9
 label6          LDA $FF
                 AND #$02
                 BEQ branch75
-branch79         LDA $FF
+branch79        LDA $FF
                 AND #$04
                 BEQ branch76
                 LDX #$C2
                 LDA #$C1
                 BNE branch77
-branch76         LDA $FF
+branch76        LDA $FF
                 AND #$08
                 BEQ branch78
                 LDX #$DB
                 LDA #$DA
-branch77         STA $07F9
+branch77        STA $07F9
                 JMP label43
                 RTS
-branch75         LDA $FF
+branch75        LDA $FF
                 AND #$01
                 BNE branch79
                 LDA $0349
@@ -508,12 +508,12 @@ branch75         LDA $FF
                 LDX #$C2
                 LDA #$C3
                 BNE branch81
-branch80         LDA $FF
+branch80        LDA $FF
                 AND #$08
                 BEQ branch82
                 LDX #$DB
                 LDA #$DC
-branch81         STX $07F8
+branch81        STX $07F8
                 CLC
                 ADC $0348
                 JSR label44
@@ -522,8 +522,8 @@ branch81         STX $07F8
                 BNE branch83
                 LDA #$FF
                 STA $0348
-branch83         INC $0348
-branch82         LDA #$01
+branch83        INC $0348
+branch82        LDA #$01
                 STA $034A
                 LDA $07F9
                 CMP #$C1
@@ -532,8 +532,8 @@ branch82         LDA #$01
                 CLC
                 ADC #$C3
                 JSR label44
-branch85         RTS
-branch84         CMP #$DA
+branch85        RTS
+branch84        CMP #$DA
                 BNE branch85
                 LDA $0348
                 CLC
