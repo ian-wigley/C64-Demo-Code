@@ -1242,7 +1242,7 @@ branch171       ASL $121D
                 LDA $121E
                 STA $8D
                 RTS
-label88          CLC
+label88         CLC
                 LDA $121D
                 ADC $121F
                 STA $121D
@@ -1251,10 +1251,10 @@ label88          CLC
                 STA $121E
                 RTS
                 BRK
-label80          LDA $03A0
+label80         LDA $03A0
                 BEQ branch172
-branch173         RTS
-branch172         LDA $03FF
+branch173       RTS
+branch172       LDA $03FF
                 CMP #$06
                 BEQ branch173
                 JSR label89
@@ -1308,7 +1308,7 @@ branch178       LDA $0341
                 AND $12B5,X
                 BEQ branch180
                 BNE branch181
-branch179         LDA $D010
+branch179       LDA $D010
                 AND $12B5,X
                 BNE branch180
 branch181         LDA $0340
