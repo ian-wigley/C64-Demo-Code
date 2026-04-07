@@ -596,14 +596,14 @@ label40         LDA $FA
 branch90        PLA
                 PLA
                 RTS
-label11          LDA #$00
+label11         LDA #$00
                 STA $0349
                 JMP label35
-label75          LDA $07F9
+label75         LDA $07F9
                 CMP #$DA
                 BNE branch91
-branch92         RTS
-branch91         CMP #$C1
+branch92        RTS
+branch91        CMP #$C1
                 BEQ branch92
                 LDA $F8
                 CMP #$5C
