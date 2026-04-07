@@ -816,15 +816,15 @@ label53         STA $0351,Y
                 JSR label56
                 RTS
                 BRK
-label65          LDA $FA
+label65         LDA $FA
                 CMP #$02
                 BEQ branch120
                 JMP label57
-branch120         LDA $FD
+branch120       LDA $FD
                 CMP #$18
                 BNE branch121
-branch122         JMP label58
-branch121         LDA $FC
+branch122       JMP label58
+branch121       LDA $FC
                 CMP #$27
                 BCS $0EDF
                 BCS $0EDF
@@ -836,7 +836,7 @@ branch121         LDA $FC
                 ADC #$00
                 STA $24
                 JMP label59
-label57          LDA $FD
+label57         LDA $FD
                 CMP #$18
                 BEQ branch122
                 LDA $FC
@@ -849,10 +849,10 @@ label57          LDA $FD
                 LDA $F9
                 SBC #$00
                 STA $24
-label59          LDA $FE
+label59         LDA $FE
                 BEQ branch123
                 JMP label60
-branch123         LDY #$00
+branch123       LDY #$00
                 LDA ($23),Y
                 CMP #$20
                 BEQ branch124
