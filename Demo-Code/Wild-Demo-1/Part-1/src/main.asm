@@ -3,5 +3,6 @@
 ;          SYS 4096 to start         ;
 ;                                    ;
 ; ********************************** ;
-                *=$0800
-                !binary "./binaries/memory-0800-8000.bin"
+
+                *=$1000
+                !binary "./binaries/memory-1000-8000.bin"
