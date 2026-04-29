@@ -397,7 +397,7 @@ branch55        CMP #$64
                 BCS $0B84
                 PLA
                 PLA
-                JMP $0BA1 ; check label37
+                JMP branch60 ;$0BA1 ; check label37
 branch53        LDA $F9
                 CMP #$C2
                 BNE branch57
@@ -2404,8 +2404,8 @@ branch270         CMP #$03
                 LDA $033D
                 BEQ branch271
                 DEC $FB
-branch273         JMP label177
-branch272         CMP #$04
+branch273       JMP label177
+branch272       CMP #$04
                 BNE branch273
                 LDA $FB
                 BEQ branch268
@@ -2415,7 +2415,7 @@ branch272         CMP #$04
                 LDA $033D
                 BEQ branch271
                 INC $FB
-label175          LDX $B1
+label175        LDX $B1
                 LDY $16D0,X
                 LDA #$00
                 STA $7805,Y
@@ -2423,13 +2423,13 @@ label175          LDX $B1
                 LDA $D41B
                 CMP #$08
                 BCC $1C12
-branch274         JMP label180
-label153          LDA $03E8
+branch274       JMP label180
+label153        LDA $03E8
                 CMP #$47
                 BEQ branch275
                 JMP label181
-branch275         LDX #$00
-branch276         LDA $2A38,X
+branch275       LDX #$00
+branch276       LDA $2A38,X
                 PHA
                 LDA $2A58,X
                 STA $2A38,X
@@ -2440,7 +2440,7 @@ branch276         LDA $2A38,X
                 BNE branch276
                 JMP label181
                 BRK
-label182          SEC
+label182        SEC
                 LDA $0342
                 SBC #$2C
                 LSR
@@ -2733,13 +2733,13 @@ branch302       STA $0890,X
                 JSR label202
                 LDA #$00
                 LDX #$00
-branch303         STA $7000,X
+branch303       STA $7000,X
                 STA $7800,X
                 INX
                 BNE branch303
                 LDA #$00
                 LDX #$00
-branch304         STA $0350,X
+branch304       STA $0350,X
                 INX
                 CPX #$70
                 BNE branch304
@@ -2751,17 +2751,17 @@ branch304         STA $0350,X
                 BRK
                 BRK
                 BRK
-label195          LDX #$00
-branch306         LDA $0410,X
+label195        LDX #$00
+branch306       LDA $0410,X
                 CMP #$80
                 BEQ branch305
                 INX
                 CPX #$06
                 BNE branch306
-branch305         CPX #$00
+branch305       CPX #$00
                 BNE branch307
                 JMP label204
-branch307         DEX
+branch307       DEX
                 LDA #$80
                 STA $0410,X
                 RTS
@@ -2769,12 +2769,12 @@ branch307         DEX
                 BRK
 label2          LDA #$02
                 LDX #$00
-branch308         STA $DBC4,X
+branch308       STA $DBC4,X
                 INX
                 CPX #$06
                 BNE branch308
                 LDX #$00
-branch309         LDA #$05
+branch309       LDA #$05
                 STA $DBCA,X
                 INX
                 CPX #$0A
@@ -2810,32 +2810,32 @@ branch312       LDA #$40
                 CMP #$7F
                 BNE branch313
                 DEC $03F1
-branch313         RTS
-label198          LDA #$60
+branch313       RTS
+label198        LDA #$60
                 STA $03F0
                 LDA #$0F
                 STA $03F1
                 LDX #$00
-branch314         LDA $08D0,X
+branch314       LDA $08D0,X
                 STA $07C0,X
                 INX
                 CPX #$20
                 BNE branch314
                 JMP label112
-branch316         JSR label206
+branch316       JSR label206
                 LDA $03F1
                 BPL branch315
                 JMP label207
-branch315         RTS
-label125          JSR label208
+branch315       RTS
+label125        JSR label208
                 JMP label209
-label111          LDA $D015
+label111        LDA $D015
                 AND #$04
                 BNE branch316
                 RTS
                 STA $D015
-label212          LDX #$00
-branch318         LDY $16D0,X
+label212        LDX #$00
+branch318       LDY $16D0,X
                 LDA $7802,Y
                 BEQ branch317
                 LDA #$00
@@ -2928,15 +2928,15 @@ label135        JSR label134
                 LDA $8002
                 CMP $1644
                 BEQ branch324
-                BCC $2050
+                BCC branch325 ; $2050
 branch326       RTS
 branch324       LDA $8001
                 CMP $1643
-                BCC $2050
+                BCC branch325; $2050
                 BNE branch326
                 LDA $8000
                 CMP $1642
-                BCC $2050
+                BCC branch325 ;$2050
                 RTS
 label208        JSR label212
                 LDA $D015
@@ -3043,16 +3043,16 @@ branch334       LDA $2154,X
                 RTS
 
                 *=$215E
-                !byte $C0, $60
-                !byte $F4, $60
+                !byte $C0,$60
+                !byte $F4,$60
                 !byte $28
                 !byte $60
-                !byte $80, $A9
-                !byte $FF, $8D, $1D
-                !byte $D0, $8D
-                !byte $17, $D0
+                !byte $80,$A9
+                !byte $FF,$8D,$1D
+                !byte $D0,$8D
+                !byte $17,$D0
 
-                LDA #$DA
+label215        LDA #$DA
                 STA $07F9
                 LDA #$DB
                 JSR label217
@@ -3117,7 +3117,7 @@ branch340       JSR label222
 
                 LDA $D010
                 AND #$03
-                BNE  $21F6; check branch343
+                BNE $21F6; check branch343
                 LDA #$00
                 BIT $06A9
                 RTS
@@ -4125,7 +4125,7 @@ label157        LDA $F8
                 !byte $1E, $40, $00,$1E, $80, $00,$1F, $00, $00,$00
 
                 *=$3940
-                STX $3FFF
+label222        STX $3FFF
                 STY $3FFE
                 JSR llabel0
                 BNE bbranch0
@@ -4157,7 +4157,8 @@ bbranch4        JSR llabel7
                 DEC $F8
                 BNE bbranch4
                 JMP llabel8
-                LDA #$00
+
+label213        LDA #$00 ; Start
                 STA $D020
                 STA $D021
                 LDA #$1A
@@ -4250,9 +4251,9 @@ bbranch12       LDA $FF
                 STA $D015
                 RTS
 llabel9         LDA #$08
-                JSR llabel13
+                JSR label1
                 LDA #$9A
-                JSR llabel13
+                JSR label1
                 JMP llabel8
                 LDA $07F8
                 CLC
@@ -4263,7 +4264,7 @@ llabel9         LDA #$08
                 JMP llabel14
 
                 *=$3A75
-                !byte $00,$FF,$00, $A2,$00
+                !byte $00,$FF,$00,$A2,$00
 
 bbranch14       LDY $16D0,X
                 LDA $7800,Y
@@ -4307,7 +4308,7 @@ bbranch15       LDY $2F60,X
 bbranch16       RTS
 
                 *=$4000
-                LDA $5000
+llabel0         LDA $5000
                 CMP #$85
                 BEQ bb
                 LDA #$85
@@ -4325,77 +4326,52 @@ bb              LDA #$20
                 RTS
                 RTS
 
-llabel0 = $4000
 llabel1 = $39A4
 llabel6 = $1E90
 llabel7 = $21CA
 llabel8 = $2110
-llabel13 = $FFD2
 llabel14 = $20B0
 llabel16 = $0DB4
 
 label1 = $FFD2
-label3 = $1506
-label4 = $2020
 label13 = $1020
 label54 = $3028
-label76 = $3A78
-label81 = $1138
-label83 = $1176
-label94 = $12BC
-label95 = $1179
-label123 = $2797
-label131 = $15E3
-label173 = $18EC
-label205 = $08F8
-label206 = $1F48
-label210 = $2F70
-label215 = $2165
-label223 = $C080
-label225 = $22B5
-label228 = $2364
-label232 = $120F
-label233 = $050B
-label234 = $CECE
-label235 = $3306
-label238 = $0420
-label240 = $0202
-label242 = $2001
-label243 = $0505
-label244 = $0001
-label246 = $0101
-label248 = $D0CF
-label249 = $CDCE
-label250 = $FFFF
-label251 = $004C
-label253 = $FBFF
-label254 = $FFEA
-label257 = $39A4
-label270 = $FF00
-label271 = $FF20
-
-label37 = $0BA1
 label56 = $2F00
 label62 = $27B0
 label66 = $0FC8
 label67 = $39E8
 label70 = $27B4
 label71 = $0F7D
+label76 = $3A78
+label81 = $1138
+label83 = $1176
+label94 = $12BC
+label95 = $1179
 label79 = $09AA
 label85 = $2F40
 label92 = $4020
 label96 = $11B9
 label120 = $16A0
+label123 = $2797
 label127 = $11B1
 label128 = $2F68
+label131 = $15E3
 label140 = $1756
 label155 = $19CD
+label173 = $18EC
 label177 = $1BAE
 label187 = $3AC0
 label201 = $3A64
+label205 = $08F8  ; check
+label206 = $1F48
+label210 = $2F70
+label225 = $22B5
+label228 = $2364
 label209 = $14DA
-label213 = $398E
 label214 = $3A51
 label216 = $8060 ; check
-label222 = $3940
 label230 = $3980
+
+;label215 = $2165
+;label222 = $3940
+;llabel0 = $4000
