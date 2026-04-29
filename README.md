@@ -1,8 +1,8 @@
-# C64-Demo-Code
+# C64-Demo-Code (WIP)
 A collection of reverse engineered Commodore 64 demo/intro source code written back in the late 80's !
 
-The source code can be debugged using the VSCode VS64 extension and the ACME compiler.
-
+The source code that is available can be debugged using the VSCode VS64 extension and the ACME compiler.
+<br>I am working my through reverse engineering each demo/intro ...
 
 ## ThunderCats Music Rip Intro
 
