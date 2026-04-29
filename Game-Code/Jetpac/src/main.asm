@@ -4371,7 +4371,3 @@ label209 = $14DA
 label214 = $3A51
 label216 = $8060 ; check
 label230 = $3980
-
-;label215 = $2165
-;label222 = $3940
-;llabel0 = $4000
