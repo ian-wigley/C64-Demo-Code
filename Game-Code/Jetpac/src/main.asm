@@ -3043,14 +3043,10 @@ branch334       LDA $2154,X
                 RTS
 
                 *=$215E
-                !byte $C0,$60
-                !byte $F4,$60
-                !byte $28
-                !byte $60
-                !byte $80,$A9
-                !byte $FF,$8D,$1D
-                !byte $D0,$8D
-                !byte $17,$D0
+                !byte $C0,$60,$F4,$60
+                !byte $28,$60,$80,$A9
+                !byte $FF,$8D,$1D,$D0
+                !byte $8D,$17,$D0
 
 label215        LDA #$DA
                 STA $07F9
