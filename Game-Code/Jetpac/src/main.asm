@@ -440,7 +440,7 @@ branch65        CMP #$64
                 BCS $0BD0
                 PLA
                 PLA
-                JMP $0BA1 ; check label37
+                JMP branch60 ;$0BA1 ; check label37
 branch64        LDA $F9
                 CMP #$76
                 BNE branch67
@@ -1656,14 +1656,14 @@ branch216       LDA $D010
                 JMP label130
 
                 *=$15FE
-                !byte $FF, $00, $AD
-                !byte $FD, $03, $8D
-                !byte $FE, $15, $A9
-                !byte $01, $8D
-                !byte $FD, $03, $20
-                !byte $BC, $12, $AD
-                !byte $FE, $15, $8D
-                !byte $FD, $03, $60
+                !byte $FF,$00,$AD
+                !byte $FD,$03,$8D
+                !byte $FE,$15,$A9
+                !byte $01,$8D
+                !byte $FD,$03,$20
+                !byte $BC,$12,$AD
+                !byte $FE,$15,$8D
+                !byte $FD,$03,$60
 
 label105        LDA $D015
                 AND #$80
