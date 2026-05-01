@@ -2377,10 +2377,10 @@ branch266       CMP #$01
                 JSR label159
                 LDA $033D
                 BNE branch269
-branch271         JMP label161
-branch269         INC $FB
-branch268         JMP label175
-branch267         CMP #$02
+branch271       JMP label161
+branch269       INC $FB
+branch268       JMP label175
+branch267       CMP #$02
                 BNE branch270
                 LDA $FB
                 CMP #$26
@@ -2392,7 +2392,7 @@ branch267         CMP #$02
                 BEQ branch271
                 DEC $FB
                 JMP label177
-branch270         CMP #$03
+branch270       CMP #$03
                 BNE branch272
                 LDA $FB
                 CMP #$26
@@ -2462,18 +2462,18 @@ label182        SEC
                 STA $51
                 LDA #$00
                 STA $52
-branch279         SEC
+branch279       SEC
                 LDA $50
                 SBC #$28
                 STA $50
                 BCS $1C6F
                 DEC $51
-branch277         LDA $51
+branch277       LDA $51
                 CMP #$03
                 BEQ branch278
                 INC $52
                 BNE branch279
-branch278         LDA $52
+branch278       LDA $52
                 STA $53
                 LDA #$00
                 STA $54
@@ -2498,7 +2498,7 @@ branch278         LDA $52
                 SBC $53
                 STA $51
                 RTS
-label185          JSR label182
+label185        JSR label182
                 LDA $23
                 CMP $52
                 BCS $1CCE
@@ -2507,20 +2507,20 @@ label185          JSR label182
                 BCS $1CBD
                 JSR label174
                 JMP label183
-branch281         JSR label176
-label183          JSR label159
+branch281       JSR label176
+label183        JSR label159
                 LDA $033D
                 BNE branch282
                 JMP label161
-branch282         JMP label184
-branch280         LDA $24
+branch282       JMP label184
+branch280       LDA $24
                 CMP $51
                 BCS $1CDA
                 JSR label179
                 JMP label183
-branch283         JSR label178
+branch283       JSR label178
                 JMP label183
-label184          LDX $B1
+label184        LDX $B1
                 LDY $16D0,X
                 LDA $D41B
                 AND #$03
