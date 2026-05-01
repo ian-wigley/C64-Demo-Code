@@ -8,16 +8,16 @@
 
                 *=$0800
                 !byte $00
-                !byte $14, $08
-                !byte $05, $00
-                !byte $97, $32
-                !byte $30, $34
+                !byte $14,$08
+                !byte $05,$00
+                !byte $97,$32
+                !byte $30,$34
                 !byte $38
-                !byte $30, $2C
-                !byte $30, $3A
-                !byte $9E, $32, $30
+                !byte $30,$2C
+                !byte $30,$3A
+                !byte $9E,$32,$30
                 !byte $38
-                !byte $30, $00
+                !byte $30,$00
                 !byte $00
                 !byte $00
                 !byte $00
