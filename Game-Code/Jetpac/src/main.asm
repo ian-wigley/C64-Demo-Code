@@ -2076,7 +2076,7 @@ label161        LDX $B1
                 LDA $FD
                 ADC #$D4
                 STA $F9
-branch244         LDY $2F60,X
+branch244       LDY $2F60,X
                 LDA $03E8,X
                 STA ($FC),Y
                 LDA $02
@@ -2095,7 +2095,7 @@ branch244         LDY $2F60,X
                 LDA $FB
                 STA $7803,Y
                 RTS
-label164          CLC
+label164        CLC
                 LDA $F8
                 ADC #$28
                 STA $FC
@@ -2119,24 +2119,24 @@ label164          CLC
                 ADC #$00
                 STA $FA
                 RTS
-label247          SEC
+label247        SEC
                 SBC #$01
                 STA $FC
                 LDA $F9
                 SBC #$00
                 STA $FD
                 RTS
-label159          LDY #$00
+label159        LDY #$00
                 LDA #$00
                 STA $033D
                 LDX #$00
-branch248         LDY $2F60,X
+branch248       LDY $2F60,X
                 LDA ($FC),Y
                 LDA ($FC),Y
                 CMP #$20
                 BNE branch245
                 JMP label155
-branch245         CMP $08CF
+branch245       CMP $08CF
                 BEQ branch246
                 CMP $08A9
                 BEQ branch246
@@ -2144,10 +2144,10 @@ branch245         CMP $08CF
                 BEQ branch246
                 JSR label156
                 BCC $19CD
-branch246         LDA #$01
+branch246       LDA #$01
                 STA $033D
                 RTS
-branch247         INX
+branch247       INX
                 CPX #$04
                 BNE branch248
                 RTS
@@ -2160,10 +2160,10 @@ branch247         INX
 branch249       JSR label159
                 LDA $033D
                 BEQ branch250
-label165          INC $FB
+label165        INC $FB
                 JMP label160
-branch250         JMP label161
-label158          JSR label157
+branch250       JMP label161
+label158        JSR label157
                 JSR label157
                 LDA #$28
                 STA $FB
@@ -2172,15 +2172,15 @@ label158          JSR label157
                 NOP
                 CMP #$80
                 BCC $1A03
-branch251         JSR label163
+branch251       JSR label163
                 JMP label161
-label160          LDX $B1
+label160        LDX $B1
                 LDY $16D0,X
                 LDA #$00
                 STA $7802,Y
                 JMP label144
-label154          LDX #$00
-branch252         LDY $2F60,X
+label154        LDX #$00
+branch252       LDY $2F60,X
                 LDA #$20
                 STA ($F8),Y
                 INX
@@ -2189,7 +2189,7 @@ branch252         LDY $2F60,X
                 LDX $B1
                 LDY $16D0,X
                 RTS
-label147          STA $7000,Y
+label147        STA $7000,Y
                 LDA #$00
                 STA $D412
                 LDA #$38
@@ -2202,7 +2202,7 @@ label147          STA $7000,Y
                 STA $D40E
                 STA $D40F
                 RTS
-label150          LDA $D41B
+label150        LDA $D41B
                 AND #$07
                 TAX
                 LDA $1A57,X
