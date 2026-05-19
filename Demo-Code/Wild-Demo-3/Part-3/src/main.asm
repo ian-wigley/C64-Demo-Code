@@ -6,7 +6,6 @@
 
                 *=$0800
                 !binary "./binaries/memory-0800-4342.bin"
-                ;!binary "./binaries/memory-0800-5600.bin"
 
                 *=$4000
                 SEI
