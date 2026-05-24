@@ -501,6 +501,9 @@ label7 = $9000
                 !text "WILD BOYS , CCS , VORTEX 42 , FAZE 7 , TLC , THATS ALL I CAN REMEMBER RIGHT NOW , SORRY IF "
                 !text "I MISSED YOU !!! . WHY NOT PRESS SPACE TO GO ON !!! ....            END OF TEXT              "
 
+                ; Bitmpa @3f00 ?
+
+
                 ; Font  @ $4800 - 4B00
                 *=$4800
                 !binary "./binaries/memory-4800-4B00.bin"
