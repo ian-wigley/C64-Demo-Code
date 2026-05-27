@@ -3,8 +3,8 @@
 ;          SYS 2816 to start         ;
 ;                                    ;
 ; ********************************** ;
-;                *=$0800
-;                !binary "./binaries/memory-0800-6000.bin"
+                *=$0800
+                !binary "./binaries/memory-0800-6000.bin"
 
                 *=$0B00
                 SEI
@@ -278,7 +278,7 @@ branch5         ROL $0A02,X
 branch6         JSR label12
                 JSR label13
                 RTS
-label11          LDY #$00
+label11         LDY #$00
                 LDA ($02),Y
                 AND #$3F
                 BNE branch7
