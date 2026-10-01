@@ -71,7 +71,6 @@ branch4         LDA score,Y ;$0880,Y
         
                 *=$087D
                 !text "   "
-                
 score           !byte $13, $03, $0F, $12, $05                      ; 0880
                 !text ":000000"                                    ; 0885
                 !byte $80, $80, $80, $80
@@ -2532,7 +2531,7 @@ label184        LDX $B1
                 CMP #$E0
                 BCC $1CFD
                 JMP label180
-branch284         JMP label185
+branch284       JMP label185
                 JSR label182
                 LDA $23
                 CMP $52
@@ -2563,7 +2562,7 @@ branch288       LDA $23
                 STA $23
                 BCS $1D44
                 DEC $24
-branch289         LDY #$00
+branch289       LDY #$00
                 LDA ($23),Y
                 JSR label188
                 LDY #$28
@@ -2571,19 +2570,19 @@ branch289         LDY #$00
                 JSR label188
                 LDA $D01F
                 RTS
-label188          CMP $03E8
+label188        CMP $03E8
                 BNE branch290
-branch291         JMP label189
-branch290         CMP $03E9
+branch291       JMP label189
+branch290       CMP $03E9
                 BEQ branch291
                 CMP $03EA
                 BEQ branch291
                 CMP $03EB
                 BEQ branch291
                 RTS
-label189          PLA
+label189        PLA
                 PLA
-label207          LDA $23
+label207        LDA $23
                 STA $F8
                 LDA $24
                 STA $F9
@@ -2592,7 +2591,7 @@ label207          LDA $23
                 AND #$F8
                 STA $D015
                 JSR label190
-branch293         JSR label99
+branch293       JSR label99
                 JSR label191
                 JSR label101
                 JSR label102
@@ -2600,7 +2599,7 @@ branch293         JSR label99
                 CMP #$06
                 BNE branch292
                 JSR label103
-branch292         LDA #$00
+branch292       LDA #$00
                 STA $033E
                 JSR label104
                 JSR label105
@@ -2641,7 +2640,7 @@ branch294       INX
                 STA $0340
                 LDA #$00
                 JMP label197
-label197          LDA #$D4
+label197        LDA #$D4
                 STA $0342
                 STA $D001
                 STA $D003
@@ -2661,17 +2660,17 @@ label197          LDA #$D4
                 LDX #$F8
                 TXS
                 JMP label198
-label194          JSR label68
+label194        JSR label68
                 JSR label79
                 JMP label68
-label200          LDX #$00
-branch297         LDY $16D0,X
+label200        LDX #$00
+branch297       LDY $16D0,X
                 LDA $03A0,Y
                 CMP #$00
                 BEQ branch296
                 LDA #$02
                 STA $03A0,Y
-branch296         INX
+branch296       INX
                 CPX #$04
                 BNE branch297
                 LDA $0390
@@ -2683,7 +2682,7 @@ branch296         INX
                 STA $D008
                 LDA #$7C
                 STA $D009
-branch298         LDA $0398
+branch298       LDA $0398
                 CMP #$01
                 BNE branch299
                 LDA #$00
@@ -2692,8 +2691,8 @@ branch298         LDA $0398
                 STA $D00A
                 LDA #$5C
                 STA $D00B
-branch299         JMP label199
-label190          LDA #$00
+branch299       JMP label199
+label190        LDA #$00
                 STA $0340
                 STA $0342
                 JMP label200
@@ -3227,9 +3226,8 @@ branch354       LDA $22E1,X
                 JMP label226
 
                 *=$22E1
-                !byte $01, $15
-                !byte $14, $08
-                !byte $0F, $12, $3A
+                !byte $01, $15, $14, $08, $0F, $12, $3A
+xxx
 
 label226        LDA #$00
                 STA $FF
@@ -3348,29 +3346,14 @@ branch360       LDA ($FA),Y
                 BNE branch361
                 JMP label230
 
-;                *=$23D7
-                !byte $00,$00,$00,$00,$00,$00,$00,$00
-                !byte $00
-
-;23e0           !text ":000000"
-                !byte $20, $20, $20
-                !byte $20, $20, $20
-                !byte $20, $20, $20
-                !byte $20, $15, $13
-                !byte $05, $20
-                !byte $0A
-                !byte $0F, $19, $13
-                !byte $14, $09
-                !byte $03, $0B
-                !byte $20, $0F, $12
-                !byte $20, $0B, $05
-                !byte $19, $13, $20
-                !byte $20, $20, $20
-                !byte $20, $20, $20
-                !byte $20, $20, $20
-                !byte $20, $20, $20
-                !byte $20, $20, $20
-                !byte $20, $20, $20
+;               *=$23D7
+                !byte $00, $00, $00, $00, $00, $00, $00, $00, $00
+;               *=$23e0
+                !byte $20, $20, $20, $20, $20, $20, $20, $20, $20, $20
+                !scr "use joystick or keys"
+                !byte $20, $20, $20, $20, $20, $20, $20
+                !byte $20, $20, $20, $20, $20, $20
+                !byte $20, $20, $20, $20, $20, $20
                 !byte $20, $CE, $CE
                 !byte $CE, $CE, $CE
                 !byte $CE, $CE, $CE
