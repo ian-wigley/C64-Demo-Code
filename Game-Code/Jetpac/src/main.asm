@@ -2539,25 +2539,25 @@ branch284         JMP label185
                 BCS $1D0F
                 JSR label174
                 JMP label186
-branch285         JSR label179
-label186          JSR label159
+branch285       JSR label179
+label186        JSR label159
                 LDA $033D
                 BNE branch286
                 JMP label161
-branch286         JMP label160
-label110          LDA $D01F
+branch286       JMP label160
+label110        LDA $D01F
                 STA $D01F
                 AND #$02
                 BNE branch287
                 RTS
-branch287         JSR label187
+branch287       JSR label187
                 CLC
                 LDA $23
                 ADC $25
                 STA $23
                 BCC $1D39
                 INC $24
-branch288         LDA $23
+branch288       LDA $23
                 SEC
                 SBC #$25
                 STA $23
@@ -2750,19 +2750,20 @@ branch304       STA $0350,X
                 BRK
                 BRK
                 BRK
-label195        LDX #$00
+label195        LDX #$00               ; find first blank slot on screen
 branch306       LDA $0410,X
                 CMP #$80
                 BEQ branch305
                 INX
                 CPX #$06
                 BNE branch306
-branch305       CPX #$00
+branch305       CPX #$00               ; no icons left -> game over
                 BNE branch307
                 JMP label204
 branch307       DEX
                 LDA #$80
-                STA $0410,X
+;                STA $0410,X            ; blank the last icon
+                STA $d020
                 RTS
                 CPX $0017
                 BRK
