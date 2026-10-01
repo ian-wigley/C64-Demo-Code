@@ -200,7 +200,7 @@ branch4         LDA $0591,X
                 INC $0AD3
                 RTS
 
-; Scroll text backgound colour
+; Scroll text background colour
 label10         LDX #$00
 branch6         LDA $D012
 branch5         CMP $D012
